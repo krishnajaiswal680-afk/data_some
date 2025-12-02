@@ -1,0 +1,22 @@
+and about FDP (Flight Duty Period) from uploaded pdf.
+and about Flight Time – (Total Operating Block Hours)  from uploaded pdf
+Number of Landings  from the uploaded PDF
+Minimum Rest Period from uploaded PDF
+Weekly Rest from uploaded PDF
+Sector Qualification from Uploaded PDF
+1) OKay now ignore the section qualification since its not available in the document. I am uploading an exel file, where static data for all the crews we have. can you analyze it and propose formula relating to each KPI above we asked and how to calculate it from the Excel file. give me only forumulas to find Duty Period (DP)
+Flight Duty Period (FDP)
+Flight Time
+Rest Periods, Number of Landings
+Weekly Rest. according to the data provided in the excel file.
+2)
+okay I think you have undestood every thing and how to calculate. now Let me explain my POC to you We are making a a chatbot using azure AI foundry agents, where we have 3 agents orchestrator agent(master) and 2 connected agent named DataAgent and ComplianceAgent, dataAgent has the exel file we have provided to you earlier data agent will give all the data required and send it to orchestratorAgent which then call ComplianceAgent to whom we have given CAR Sec 7 Seriess J Ptw 3 Jan2024 (1) which contains DGCA rules. till here did you understand what i have said ?\
+
+3)
+Yes I think you have proper understanding of the flow for our project, now the main objective of our project is that we are focussing on crew roastering. So in this POC level project we have only taken 1 case where user will write say as an example: " id 104 is sick on 2025-10-01" orchestrator agent calls dataagent which in first step parse the data,id and the day of sick report of the reported sick crew from the user query than apply a pre filter of Pos, CWBASE, DutyCode = SBY, DutyDay and then fetches the crew which satisfies these prefilters after all these for compliance agent to work DataAgent will also calculate for each crew                    •	DP (Duty Period).
+•	FDP (Flight Duty Period) .
+•	Flight Time.
+•	Number of Landings 
+•	Minimum Rest Period	
+⦁	Weekly Rest
+and then send this data in a json format to orchestratorAgent which will call Compliance agent and in complieance agent we will check if the crew_ids from Datagent satisfies the DGCA rules and give only the approved crew_ID s . tell me you understand the whole project now ?
